@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://cinema-85g1.onrender.com/api";
 
 async function fetchMedia(mediaType = "") {
   try {
