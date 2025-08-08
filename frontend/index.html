@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Filmes e Séries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .scrollable-content {
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+      }
+
+      .scrollable-content::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#10131A] text-white font-sans">
+    <nav class="bg-[#10131A] p-4 shadow-lg sticky top-0 z-40">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+          <a
+            href="#"
+            class="text-2xl font-bold text-[#4B88E8] whitespace-nowrap"
+            >Filmes e Séries</a
+          >
+
+          <a
+            href="index.html"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Início</a
+          >
+
+          <a
+            href="#"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Séries</a
+          >
+
+          <div class="relative group">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition duration-200"
+              >Gêneros</a
+            >
+
+            <div class="absolute hidden group-hover:block pt-3 z-50">
+              <div class="bg-[#1B1E29] rounded-md shadow-xl w-40">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Ação</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Aventura</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Comédia</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Ficção Científica</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Terror</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Romance</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition duration-200"
+              >Lançamentos</a
+            >
+
+            <div class="absolute hidden group-hover:block pt-3 z-50">
+              <div class="bg-[#1B1E29] rounded-md shadow-xl w-32">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2025</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2024</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2023</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2022</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2021</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg
+                class="h-5 w-5 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              placeholder="Pesquisar..."
+              class="pl-10 pr-4 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200 w-40 sm:w-64"
+            />
+          </div>
+
+          <a
+            href="tela_login.html"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Login</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto p-8">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-100">Catálogo de Filmes</h1>
+        <a
+          href="#"
+          class="text-[#4B88E8] hover:text-white transition-colors duration-200"
+          >Ver Todos</a
+        >
+      </div>
+
+      <div class="relative mb-12">
+        <div id="filmes-container" class="flex space-x-8 scrollable-content">
+          <p class="text-gray-400">Carregando filmes...</p>
+        </div>
+        <button
+          id="filmes-prev"
+          class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white hover:bg-[#4B88E8] transition-colors duration-200 z-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          id="filmes-next"
+          class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white hover:bg-[#4B88E8] transition-colors duration-200 z-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="border-t border-gray-700 my-12"></div>
+
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-100">Catálogo de Séries</h1>
+        <a
+          href="#"
+          class="text-[#4B88E8] hover:text-white transition-colors duration-200"
+          >Ver Todas</a
+        >
+      </div>
+
+      <div class="relative">
+        <div id="series-container" class="flex space-x-8 scrollable-content">
+          <p class="text-gray-400">Carregando séries...</p>
+        </div>
+        <button
+          id="series-prev"
+          class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white hover:bg-[#4B88E8] transition-colors duration-200 z-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          id="series-next"
+          class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white hover:bg-[#4B88E8] transition-colors duration-200 z-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function setupCarousel(containerId, prevBtnId, nextBtnId) {
+        const container = document.getElementById(containerId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+
+        nextBtn.addEventListener("click", () => {
+          const scrollAmount = container.clientWidth * 0.8;
+          container.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+        });
+
+        prevBtn.addEventListener("click", () => {
+          const scrollAmount = container.clientWidth * 0.8;
+          container.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth",
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setupCarousel("filmes-container", "filmes-prev", "filmes-next");
+        setupCarousel("series-container", "series-prev", "series-next");
+      });
+    </script>
+  </body>
+</html>

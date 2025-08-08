@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Filmes e Séries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#10131A] text-white font-sans">
+    <nav class="bg-[#10131A] p-4 shadow-lg sticky top-0 z-40">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+          <a
+            href="index.html"
+            class="text-2xl font-bold text-[#4B88E8] whitespace-nowrap"
+            >Filmes e Séries</a
+          >
+
+          <a
+            href="index.html"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Início</a
+          >
+
+          <a
+            href="#"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Séries</a
+          >
+
+          <div class="relative group">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition duration-200"
+              >Gêneros</a
+            >
+
+            <div class="absolute hidden group-hover:block pt-3 z-50">
+              <div class="bg-[#1B1E29] rounded-md shadow-xl w-40">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Ação</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Aventura</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Comédia</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Ficção Científica</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Terror</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >Romance</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition duration-200"
+              >Lançamentos</a
+            >
+
+            <div class="absolute hidden group-hover:block pt-3 z-50">
+              <div class="bg-[#1B1E29] rounded-md shadow-xl w-32">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2025</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2024</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2023</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2022</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
+                  >2021</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg
+                class="h-5 w-5 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              placeholder="Pesquisar..."
+              class="pl-10 pr-4 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200 w-40 sm:w-64"
+            />
+          </div>
+
+          <a
+            href="tela_login.html"
+            class="text-gray-300 hover:text-white transition duration-200"
+            >Login</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="container mx-auto p-8 flex items-center justify-center min-h-[calc(100vh-80px)]"
+    >
+      <div class="bg-[#1B1E29] p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-100">
+          Crie sua conta
+        </h1>
+
+        <form id="register-form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-400"
+              >Nome</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Seu nome completo"
+              class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-400"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="seu-email@exemplo.com"
+              class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-400"
+              >Senha</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="••••••••"
+              class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <div>
+            <label
+              for="confirm-password"
+              class="block text-sm font-medium text-gray-400"
+              >Confirmar Senha</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+              placeholder="••••••••"
+              class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 px-4 bg-[#4B88E8] text-white font-semibold rounded-md shadow-md hover:bg-[#3A76D8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4B88E8] transition duration-200"
+          >
+            Cadastrar
+          </button>
+        </form>
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-400">
+            Já tem uma conta?
+            <a
+              href="tela_login.html"
+              class="font-medium text-[#4B88E8] hover:text-white transition-colors duration-200"
+              >Faça Login</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
