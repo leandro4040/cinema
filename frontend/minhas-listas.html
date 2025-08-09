@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas Listas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#10131A] text-white font-sans">
+    <nav class="bg-[#10131A] p-4 shadow-lg sticky top-0 z-40">
+        </nav>
+
+    <div class="container mx-auto p-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-100">Minhas Listas</h1>
+            <a href="criar-lista.html" class="bg-[#4B88E8] text-white px-4 py-2 rounded-md hover:bg-[#3A76D8]">
+                Criar Nova Lista
+            </a>
+        </div>
+        
+        <div id="lists-container" class="space-y-6">
+            </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listsContainer = document.getElementById('lists-container');
+            // Simulação de dados de listas do banco de dados
+            const lists = [
+                { id: '1', name: 'Favoritos', description: 'Meus filmes e séries preferidos.', isPublic: true },
+                { id: '2', name: 'Para Assistir', description: 'O que preciso ver em breve.', isPublic: false }
+            ];
+
+            if (lists.length > 0) {
+                lists.forEach(list => {
+                    const listCard = document.createElement('div');
+                    listCard.className = 'bg-[#1B1E29] p-6 rounded-xl shadow-lg flex items-center justify-between';
+                    listCard.innerHTML = `
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-100">${list.name}</h3>
+                            <p class="text-gray-400 mt-1">${list.description || 'Sem descrição.'}</p>
+                            <span class="text-sm text-gray-500">${list.isPublic ? 'Pública' : 'Privada'}</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="detalhes-lista.html?id=${list.id}" class="text-[#4B88E8] hover:underline">Ver</a>
+                            <a href="editar-lista.html?id=${list.id}" class="text-yellow-400 hover:underline">Editar</a>
+                            <button class="text-red-400 hover:underline">Excluir</button>
+                        </div>
+                    `;
+                    listsContainer.appendChild(listCard);
+                });
+            } else {
+                listsContainer.innerHTML = '<p class="text-center text-gray-400">Você ainda não tem nenhuma lista.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

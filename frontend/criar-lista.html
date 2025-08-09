@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Nova Lista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#10131A] text-white font-sans">
+    <nav class="bg-[#10131A] p-4 shadow-lg sticky top-0 z-40">
+        </nav>
+
+    <div class="container mx-auto p-8 flex items-center justify-center min-h-[calc(100vh-80px)]">
+        <div class="bg-[#1B1E29] p-8 rounded-xl shadow-lg w-full max-w-lg">
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-100">
+                Criar Nova Lista
+            </h1>
+
+            <form id="create-list-form" class="space-y-6">
+                <div>
+                    <label for="list-name" class="block text-sm font-medium text-gray-400">Nome da Lista</label>
+                    <input
+                        type="text"
+                        id="list-name"
+                        name="list-name"
+                        required
+                        placeholder="Ex: Filmes Favoritos, Para Assistir..."
+                        class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+                    />
+                </div>
+
+                <div>
+                    <label for="list-description" class="block text-sm font-medium text-gray-400">Descrição (opcional)</label>
+                    <textarea
+                        id="list-description"
+                        name="list-description"
+                        rows="4"
+                        placeholder="Uma breve descrição sobre a sua lista."
+                        class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4B88E8] focus:border-transparent transition duration-200"
+                    ></textarea>
+                </div>
+                
+                <div class="flex items-center">
+                    <input id="is-public" name="is-public" type="checkbox" class="h-4 w-4 text-[#4B88E8] focus:ring-[#4B88E8] border-gray-600 rounded">
+                    <label for="is-public" class="ml-2 block text-sm text-gray-400">Tornar a lista pública</label>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full py-3 px-4 bg-[#4B88E8] text-white font-semibold rounded-md shadow-md hover:bg-[#3A76D8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4B88E8] transition duration-200"
+                >
+                    Criar Lista
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
